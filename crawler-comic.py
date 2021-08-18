@@ -15,10 +15,10 @@ def FindComic(name):
     return titles.string
 
 def FindComicLink(name):
-    Link =root.find("a",string=name)
-    return Link
-name=input("Comic name: ")
-print(FindComic(name))
-print(FindComicLink(name))
+    Link =root.find(title=name)
+    return "https://www.cartoonmad.com/"+Link.get('href') #取得"href"標籤
+    
+name=input("輸入漫畫名稱: ")
+print(FindComic(name),"漫畫連結: ",FindComicLink(name))
 
 
